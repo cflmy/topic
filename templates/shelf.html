@@ -5,20 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site_title }}</title>
   <meta name="description" content="{{ meta_description }}">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png">
+  <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/brand/logo-240.webp" type="image/webp" fetchpriority="high">
   {{ preload_block }}
   <link rel="stylesheet" href="/css/shelf.css">
 </head>
 <body>
+  <div class="shelf-atmosphere" aria-hidden="true">
+    <span class="shelf-orb shelf-orb--a"></span>
+    <span class="shelf-orb shelf-orb--b"></span>
+    <span class="shelf-orb shelf-orb--c"></span>
+    <span class="shelf-grain"></span>
+  </div>
+
   <main class="shelf-wrap">
     <header class="shelf-header">
+      <a class="shelf-brand" href="/" aria-label="{{ site_name }} 首页">
+        <img
+          class="shelf-logo"
+          src="/brand/logo.webp"
+          srcset="/brand/logo-240.webp 240w, /brand/logo.webp 336w"
+          sizes="(max-width: 576px) 9.5rem, 11rem"
+          width="336"
+          height="242"
+          alt=""
+          decoding="async"
+          fetchpriority="high">
+      </a>
+      <p class="shelf-eyebrow">Quiet days · Quiet stories</p>
       <h1 class="shelf-title">{{ site_name }}</h1>
       <p class="shelf-lead">{{ site_tagline }}</p>
+      <div class="shelf-rule" aria-hidden="true">
+        <span class="shelf-rule__star"></span>
+      </div>
     </header>
 
     {{ books_block }}
 
     <footer class="shelf-footer">
-      <p>{{ site_name }} · 静态策展</p>
+      <p class="shelf-footer__motto">相逢书架，相守叙事</p>
+      <p class="shelf-footer__meta">{{ site_name }} · 静态策展</p>
     </footer>
   </main>
 </body>

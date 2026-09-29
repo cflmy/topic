@@ -230,6 +230,14 @@ def main() -> None:
     css_src = STATIC_DIR / "css"
     copy_tree(css_src, DIST / "css")
 
+    # Brand / favicon
+    brand_src = STATIC_DIR / "brand"
+    if brand_src.is_dir():
+        copy_tree(brand_src, DIST / "brand")
+        favicon = brand_src / "favicon.ico"
+        if favicon.is_file():
+            shutil.copy2(favicon, DIST / "favicon.ico")
+
     # Covers
     copy_tree(CONTENT_COVERS, DIST / "covers")
 
