@@ -1,0 +1,430 @@
+/* 钗头凤 · 红酥手 — 忧伤错过的沈园词意 */
+
+:root {
+  --ctf-ink: #0c0e12;
+  --ctf-ink-soft: #161a22;
+  --ctf-wine: #6b2438;
+  --ctf-wine-deep: #3d1525;
+  --ctf-peach: #c48a8a;
+  --ctf-peach-fade: rgba(196, 138, 138, 0.35);
+  --ctf-gold: #9a7b5a;
+  --ctf-gold-dim: rgba(154, 123, 90, 0.5);
+  --ctf-paper: rgba(245, 236, 228, 0.94);
+  --ctf-muted: rgba(220, 210, 200, 0.65);
+  --ctf-glass: rgba(14, 16, 22, 0.78);
+  --ctf-border: rgba(154, 123, 90, 0.28);
+  --ctf-radius: 4px;
+  --font-serif: 'Songti SC', 'STSong', 'SimSun', 'FangSong', 'KaiTi', 'STKaiti', serif;
+  --font-sans: system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--ctf-paper);
+  background: var(--ctf-ink);
+  overflow-x: hidden;
+  line-height: 1.85;
+}
+
+#ctf-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ctf-mist {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(107, 36, 56, 0.15), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(60, 80, 100, 0.12), transparent 50%);
+}
+
+.ctf-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* —— 导航 —— */
+.ctf-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(180deg, rgba(12, 14, 18, 0.9) 0%, transparent 100%);
+}
+
+.ctf-nav__brand {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  letter-spacing: 0.35em;
+  color: var(--ctf-peach);
+  text-decoration: none;
+}
+
+.ctf-nav__links {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.ctf-nav__links a {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--ctf-muted);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+
+.ctf-nav__links a:hover {
+  color: var(--ctf-paper);
+}
+
+.ctf-nav__back {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--ctf-gold-dim);
+  text-decoration: none;
+  border: 1px solid var(--ctf-border);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+}
+
+.ctf-nav__back:hover {
+  color: var(--ctf-peach);
+  border-color: var(--ctf-peach-fade);
+}
+
+/* —— 主内容 —— */
+.ctf-main {
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.25rem 3.5rem;
+}
+
+.ctf-panel {
+  width: 100%;
+  max-width: 42rem;
+  padding: 2rem 1.75rem;
+  background: var(--ctf-glass);
+  border: 1px solid var(--ctf-border);
+  border-radius: var(--ctf-radius);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ctf-panel--wide {
+  max-width: 54rem;
+}
+
+.section.is-visible .ctf-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctf-h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  color: var(--ctf-gold);
+  margin: 0 0 1rem;
+  text-indent: 0.4em;
+}
+
+.ctf-lead {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--ctf-muted);
+  margin: 0 0 1.25rem;
+}
+
+.ctf-panel p {
+  margin: 0 0 1rem;
+  font-size: 0.98rem;
+}
+
+.ctf-aside {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--ctf-muted);
+  border-left: 2px solid var(--ctf-wine);
+  padding-left: 1rem;
+  margin-top: 1.25rem;
+}
+
+.ctf-note {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--ctf-muted);
+  margin: 1.25rem 0 0;
+}
+
+/* —— Hero —— */
+.ctf-hero {
+  flex-direction: column;
+  text-align: center;
+}
+
+.ctf-hero__dynasty {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--ctf-muted);
+  margin: 0 0 1rem;
+}
+
+.ctf-hero__title {
+  margin: 0 0 1.25rem;
+}
+
+.ctf-hero__line {
+  display: block;
+  font-size: clamp(3rem, 14vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-indent: 0.45em;
+  color: var(--ctf-paper);
+  text-shadow: 0 0 40px rgba(196, 138, 138, 0.35);
+}
+
+.ctf-hero__sub {
+  display: block;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  letter-spacing: 0.55em;
+  text-indent: 0.55em;
+  color: var(--ctf-peach);
+  margin-top: 0.5rem;
+}
+
+.ctf-hero__lead {
+  font-size: 1.05rem;
+  color: var(--ctf-muted);
+  max-width: 22em;
+  margin: 0 auto 2.5rem;
+  line-height: 2;
+}
+
+.ctf-hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--ctf-gold-dim);
+  animation: ctf-float 3s ease-in-out infinite;
+}
+
+.ctf-chevron {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid var(--ctf-peach);
+  border-bottom: 1px solid var(--ctf-peach);
+  transform: rotate(45deg);
+}
+
+@keyframes ctf-float {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* —— 词章 —— */
+.ctf-panel--poem {
+  text-align: center;
+}
+
+.ctf-poem-block {
+  margin: 1.5rem 0;
+  padding: 1.5rem 1rem;
+  border: 1px solid rgba(107, 36, 56, 0.4);
+  background: rgba(61, 21, 37, 0.25);
+  border-radius: var(--ctf-radius);
+}
+
+.ctf-poem-block--dim {
+  opacity: 0.92;
+  border-color: rgba(154, 123, 90, 0.25);
+}
+
+.ctf-stanza + .ctf-stanza {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px dashed rgba(154, 123, 90, 0.25);
+}
+
+.ctf-poem-line {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  letter-spacing: 0.12em;
+  margin: 0 0 0.65rem;
+  line-height: 2;
+}
+
+.ctf-poem-line--triad {
+  font-size: clamp(1.35rem, 5vw, 1.75rem);
+  color: var(--ctf-peach);
+  letter-spacing: 0.35em;
+  text-indent: 0.35em;
+  margin-top: 1rem;
+  animation: ctf-pulse 4s ease-in-out infinite;
+}
+
+.ctf-poem-line--mo {
+  color: #a87888;
+}
+
+@keyframes ctf-pulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; text-shadow: 0 0 20px rgba(196, 138, 138, 0.4); }
+}
+
+.ctf-quote {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--ctf-wine);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.ctf-quote p {
+  font-size: 1.05rem;
+  letter-spacing: 0.15em;
+  margin: 0 0 0.5rem;
+  color: var(--ctf-peach);
+}
+
+.ctf-quote footer {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--ctf-muted);
+}
+
+/* —— 意象网格 —— */
+.ctf-imagery-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 30rem) {
+  .ctf-imagery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 48rem) {
+  .ctf-imagery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.ctf-imagery-card {
+  padding: 1.15rem 1rem;
+  border: 1px solid rgba(107, 36, 56, 0.35);
+  background: rgba(22, 26, 34, 0.6);
+  border-radius: var(--ctf-radius);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.35s;
+  transform-style: preserve-3d;
+}
+
+.ctf-imagery-card:hover {
+  border-color: var(--ctf-peach-fade);
+  box-shadow: 0 8px 28px rgba(107, 36, 56, 0.25);
+}
+
+.ctf-imagery-card h3 {
+  font-size: 1rem;
+  color: var(--ctf-gold);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+.ctf-imagery-card p {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--ctf-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* —— 页脚 —— */
+.ctf-footer {
+  flex-direction: column;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.ctf-footer__text {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  margin: 0 0 0.5rem;
+}
+
+.ctf-footer__sub {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--ctf-muted);
+  margin: 0 0 1.5rem;
+}
+
+.ctf-btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--ctf-paper);
+  text-decoration: none;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid var(--ctf-border);
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ctf-btn:hover {
+  background: rgba(107, 36, 56, 0.4);
+  color: var(--ctf-peach);
+}
+
+@media (max-width: 640px) {
+  .ctf-nav__links { display: none; }
+  .ctf-hero__line { letter-spacing: 0.25em; text-indent: 0.25em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ctf-panel { transition: none; opacity: 1; transform: none; }
+  .ctf-hero__scroll, .ctf-poem-line--triad { animation: none; }
+}

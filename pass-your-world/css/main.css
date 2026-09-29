@@ -1,0 +1,647 @@
+/* 从你的全世界路过 — 温柔花海 · 纵深影像 */
+
+:root {
+  --pyw-sky: #b8d9f0;
+  --pyw-sky-deep: #7eb3d8;
+  --pyw-gold: #e8c49a;
+  --pyw-peach: #f5d4c8;
+  --pyw-blush: #f0b8c0;
+  --pyw-cream: rgba(255, 252, 248, 0.94);
+  --pyw-muted: rgba(255, 255, 255, 0.78);
+  --pyw-glass: rgba(255, 255, 255, 0.42);
+  --pyw-border: rgba(255, 255, 255, 0.55);
+  --pyw-text: #3d4a5c;
+  --pyw-text-soft: #5a6a7e;
+  --pyw-shadow: rgba(90, 120, 150, 0.25);
+  --pyw-radius: 16px;
+  --font-serif: 'Songti SC', 'STSong', 'KaiTi', 'STKaiti', serif;
+  --font-sans: system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--pyw-text);
+  background: linear-gradient(180deg, #d4e8f8 0%, #f5e6dc 45%, #fde8ef 100%);
+  overflow-x: hidden;
+  line-height: 1.75;
+}
+
+#pyw-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pyw-sky-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 45% at 50% 0%, rgba(255, 255, 255, 0.5), transparent 60%);
+}
+
+/* —— 导航 —— */
+.pyw-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.5rem;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--pyw-border);
+}
+
+.pyw-nav__brand {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--pyw-text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pyw-nav__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.pyw-nav__links a {
+  font-size: 0.8rem;
+  color: var(--pyw-text-soft);
+  text-decoration: none;
+}
+
+.pyw-nav__links a:hover {
+  color: var(--pyw-text);
+}
+
+.pyw-nav__back {
+  font-size: 0.78rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--pyw-border);
+  background: var(--pyw-glass);
+  color: var(--pyw-text);
+  text-decoration: none;
+}
+
+/* —— 主区 —— */
+.pyw-main {
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.25rem 3.5rem;
+}
+
+.section[id^='quotes'] {
+  min-height: auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.pyw-panel {
+  width: 100%;
+  max-width: 44rem;
+  padding: 2rem 1.75rem;
+  background: var(--pyw-glass);
+  border: 1px solid var(--pyw-border);
+  border-radius: var(--pyw-radius);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 16px 48px var(--pyw-shadow);
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pyw-panel--wide {
+  max-width: 56rem;
+}
+
+.section.is-visible .pyw-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pyw-h2 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  letter-spacing: 0.35em;
+  text-indent: 0.35em;
+  color: var(--pyw-text);
+  margin: 0 0 1rem;
+}
+
+.pyw-lead {
+  font-size: 0.92rem;
+  color: var(--pyw-text-soft);
+  margin: 0 0 1.25rem;
+}
+
+.pyw-panel p {
+  margin: 0 0 1rem;
+  font-size: 0.96rem;
+}
+
+.pyw-panel a {
+  color: #6a8ab0;
+}
+
+.pyw-note {
+  font-size: 0.78rem;
+  color: var(--pyw-text-soft);
+  margin-top: 1rem;
+}
+
+/* —— Hero 纵深封面 —— */
+.pyw-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.25rem 3rem;
+  overflow: hidden;
+}
+
+.pyw-hero__layers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.pyw-hero__layer {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  left: -10%;
+  will-change: transform;
+}
+
+.pyw-hero__layer--far {
+  top: -5%;
+  filter: blur(1px) saturate(1.1) brightness(1.05);
+  transform: scale(1.05) translate3d(0, var(--pyw-scroll, 0), 0);
+  animation: pyw-drift-far 24s ease-in-out infinite alternate;
+}
+
+.pyw-hero__layer--mid {
+  top: 10%;
+  opacity: 0.85;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 25%, #000 75%, transparent 100%);
+  transform: translate3d(0, var(--pyw-scroll, 0), 0);
+  animation: pyw-drift-mid 18s ease-in-out infinite alternate;
+}
+
+.pyw-hero__layer--near {
+  bottom: -15%;
+  opacity: 0.9;
+  filter: saturate(1.2);
+  mask-image: linear-gradient(180deg, transparent 30%, #000 55%);
+  transform: translate3d(0, var(--pyw-scroll, 0), 0);
+  animation: pyw-drift-near 14s ease-in-out infinite alternate;
+}
+
+@keyframes pyw-drift-far {
+  to { transform: scale(1.08) translate3d(2%, -1%, 0); }
+}
+
+@keyframes pyw-drift-mid {
+  to { transform: translate3d(-3%, 2%, 0); }
+}
+
+@keyframes pyw-drift-near {
+  to { transform: translate3d(4%, -2%, 0); }
+}
+
+.pyw-hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(184, 217, 240, 0.55) 0%,
+    rgba(245, 230, 220, 0.45) 45%,
+    rgba(253, 232, 239, 0.65) 100%
+  );
+}
+
+.pyw-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 28rem;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: var(--pyw-radius);
+  border: 1px solid var(--pyw-border);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 50px var(--pyw-shadow);
+}
+
+.pyw-hero__tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--pyw-text-soft);
+  margin: 0 0 0.75rem;
+}
+
+.pyw-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 7vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.65rem;
+  color: var(--pyw-text);
+  line-height: 1.45;
+}
+
+.pyw-hero__sub {
+  font-size: 1rem;
+  color: var(--pyw-text-soft);
+  margin: 0 0 0.85rem;
+}
+
+.pyw-hero__lead {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: #7a6a8a;
+  margin: 0;
+}
+
+.pyw-hero__scroll {
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--pyw-text-soft);
+  animation: pyw-bob 3s ease-in-out infinite;
+}
+
+.pyw-chevron {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--pyw-sky-deep);
+  border-bottom: 2px solid var(--pyw-sky-deep);
+  transform: rotate(45deg);
+}
+
+@keyframes pyw-bob {
+  50% { transform: translateY(6px); }
+}
+
+/* —— 图片 —— */
+.pyw-figure {
+  margin: 0 0 1.25rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px var(--pyw-shadow);
+  transform: perspective(800px) rotateX(2deg);
+}
+
+.pyw-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.pyw-figure figcaption {
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--pyw-text-soft);
+}
+
+.pyw-figure--windmill img {
+  filter: saturate(1.15) contrast(0.95);
+}
+
+/* —— 灵魂引语 —— */
+.pyw-soul-quote {
+  margin: 0 0 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(232, 196, 154, 0.25));
+  border: 1px solid var(--pyw-border);
+}
+
+.pyw-soul-quote p {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+  color: var(--pyw-text);
+}
+
+.pyw-soul-quote footer {
+  font-size: 0.78rem;
+  color: var(--pyw-text-soft);
+}
+
+.pyw-duo-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 32rem) {
+  .pyw-duo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pyw-duo-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--pyw-border);
+  transition: transform 0.35s, box-shadow 0.35s;
+  transform-style: preserve-3d;
+}
+
+.pyw-duo-card img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  display: block;
+}
+
+.pyw-duo-card h3 {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  margin: 0.65rem 1rem 0.25rem;
+}
+
+.pyw-duo-card p {
+  font-size: 0.82rem;
+  margin: 0 1rem 1rem;
+  color: var(--pyw-text-soft);
+}
+
+/* —— 场景卡片纵深 —— */
+.pyw-scene-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pyw-scene-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: var(--pyw-radius);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--pyw-border);
+  box-shadow: 0 12px 36px var(--pyw-shadow);
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+@media (min-width: 40rem) {
+  .pyw-scene-card {
+    grid-template-columns: 1.1fr 1fr;
+  }
+  .pyw-scene-card--depth-2 {
+    margin-left: 1.5rem;
+  }
+  .pyw-scene-card--depth-3 {
+    margin-left: 3rem;
+  }
+}
+
+.pyw-scene-card img {
+  width: 100%;
+  min-height: 12rem;
+  object-fit: cover;
+}
+
+.pyw-scene-card__body {
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pyw-scene-card h3 {
+  font-family: var(--font-serif);
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.pyw-scene-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--pyw-text-soft);
+}
+
+/* —— 语录 —— */
+.pyw-quote-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 30rem) {
+  .pyw-quote-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pyw-quote-card {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid var(--pyw-border);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--pyw-text);
+  transition: transform 0.35s;
+  transform-style: preserve-3d;
+}
+
+.pyw-quote-card p {
+  margin: 0;
+}
+
+.pyw-carousel {
+  text-align: center;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(240, 184, 192, 0.35), rgba(184, 217, 240, 0.35));
+}
+
+.pyw-carousel__text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  min-height: 3.5rem;
+  transition: opacity 0.35s;
+}
+
+.pyw-carousel__text.is-fading {
+  opacity: 0;
+}
+
+.pyw-carousel__from {
+  font-size: 0.75rem;
+  color: var(--pyw-text-soft);
+  margin: 0 0 0.75rem;
+}
+
+.pyw-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.pyw-carousel__dots button {
+  width: 8px;
+  height: 8px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(90, 120, 150, 0.35);
+  cursor: pointer;
+  padding: 0;
+}
+
+.pyw-carousel__dots button.is-active {
+  background: var(--pyw-sky-deep);
+  transform: scale(1.2);
+}
+
+/* —— 长台词列表 —— */
+.pyw-line-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(90, 120, 150, 0.25);
+}
+
+.pyw-line-section h3 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  margin: 0 0 1rem;
+  color: var(--pyw-text);
+}
+
+.pyw-line-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.pyw-line-item {
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--pyw-border);
+}
+
+.pyw-line-item p {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin: 0 0 0.45rem;
+  color: var(--pyw-text);
+}
+
+.pyw-line-item footer {
+  font-size: 0.72rem;
+  color: var(--pyw-text-soft);
+}
+
+.pyw-line-item--film {
+  border-left: 3px solid var(--pyw-blush);
+}
+
+.pyw-line-item--book {
+  border-left: 3px solid var(--pyw-sky-deep);
+}
+
+.pyw-carousel__text {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.85;
+}
+
+/* —— 人物 —— */
+.pyw-char-list {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.pyw-char-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed rgba(90, 120, 150, 0.2);
+  font-size: 0.92rem;
+}
+
+.pyw-btn {
+  display: block;
+  width: fit-content;
+  margin: 1.25rem auto 0;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--pyw-sky-deep), #9ab8d8);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  box-shadow: 0 8px 24px rgba(126, 179, 216, 0.4);
+}
+
+.pyw-btn:hover {
+  filter: brightness(1.05);
+}
+
+@media (max-width: 640px) {
+  .pyw-nav__links { display: none; }
+  .pyw-scene-card--depth-2,
+  .pyw-scene-card--depth-3 { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .pyw-panel { transition: none; opacity: 1; transform: none; }
+  .pyw-hero__layer { animation: none; }
+  .pyw-hero__scroll { animation: none; }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 52" fill="none" preserveAspectRatio="none">
+  <g stroke="currentColor" stroke-linecap="round" fill="currentColor">
+    <path d="M0 26 H68" stroke-width="0.48" fill="none" opacity=".38"/>
+    <path d="M312 26 H380" stroke-width="0.48" fill="none" opacity=".38"/>
+    <!-- 对称贝壳波浪 -->
+    <path d="M68 26 C82 10 94 10 108 26 C122 42 134 42 148 26 C162 10 174 10 188 26 C202 42 214 42 228 26 C242 10 254 10 268 26 C282 42 294 42 308 26 C322 10 334 10 348 26" stroke-width="1.2" fill="none"/>
+    <path d="M82 26 C90 18 98 18 106 26 C98 34 90 34 82 26z" opacity=".2"/>
+    <path d="M148 26 C156 18 164 18 172 26 C164 34 156 34 148 26z" opacity=".2"/>
+    <path d="M214 26 C222 18 230 18 238 26 C230 34 222 34 214 26z" opacity=".2"/>
+    <path d="M280 26 C288 18 296 18 304 26 C296 34 288 34 280 26z" opacity=".2"/>
+    <!-- 中央扇形 -->
+    <path d="M178 26 C186 14 202 14 210 26 C202 38 186 38 178 26z" opacity=".24"/>
+    <path d="M170 26 C174 20 178 20 182 26 C178 32 174 32 170 26z" opacity=".16"/>
+    <path d="M206 26 C210 20 214 20 218 26 C214 32 210 32 206 26z" opacity=".16"/>
+    <circle cx="194" cy="26" r="2.4" opacity=".48"/>
+    <circle cx="128" cy="26" r="1.5" opacity=".36"/>
+    <circle cx="260" cy="26" r="1.5" opacity=".36"/>
+    <circle cx="160" cy="20" r="1" opacity=".28"/>
+    <circle cx="228" cy="20" r="1" opacity=".28"/>
+    <circle cx="160" cy="32" r="1" opacity=".28"/>
+    <circle cx="228" cy="32" r="1" opacity=".28"/>
+  </g>
+</svg>

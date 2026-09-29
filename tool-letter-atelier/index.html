@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>见君信笺 · 专题书架</title>
+    <meta name="description" content="暗恋见君信笺工具：自定义信纸色与高雅边纹组合，手写字体实时预览，支持 PDF/PNG 导出打印寄送。">
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
+<meta name="keywords" content="书信,信笺,工具,手写字体,暗恋,情书,排版,巴洛克,边纹">
+</head>
+<body class="la-app">
+    <div class="la-ambient" aria-hidden="true">
+        <div class="la-texture"></div>
+        <div class="la-glow la-glow--a"></div>
+        <div class="la-glow la-glow--b"></div>
+    </div>
+
+    <header class="la-header">
+        <div class="la-header__inner">
+            <a href="/" class="la-header__back">
+                <span class="la-header__back-icon" aria-hidden="true">‹</span>
+                专题书架
+            </a>
+            <div class="la-header__brand">
+                <span class="la-header__mark" aria-hidden="true">笺</span>
+                <h1 class="la-header__title">见君信笺</h1>
+            </div>
+            <a href="/" class="la-header__forum">论坛</a>
+        </div>
+    </header>
+
+    <main class="la-workspace">
+        <aside class="la-editor" aria-label="书信编辑">
+            <div class="la-panel la-panel--editor">
+                <nav class="la-tabs" role="tablist" aria-label="编辑分区">
+                    <button type="button" class="la-tab is-active" role="tab" aria-selected="true" data-tab="style">信纸样式</button>
+                    <button type="button" class="la-tab" role="tab" aria-selected="false" data-tab="write">书写导出</button>
+                </nav>
+
+                <div class="la-tab-panels">
+                    <!-- 样式 -->
+                    <div class="la-tab-panel is-active" data-panel="style" role="tabpanel">
+                        <div class="la-block la-block--templates">
+                            <p class="la-block__label">信纸样式</p>
+                            <p class="la-block__hint">换一张图即换一套信笺；文字自动落在安全书写区内。</p>
+                            <div class="la-template-grid" id="la-templates" role="radiogroup" aria-label="信纸模板"></div>
+                        </div>
+
+                        <div class="la-block">
+                            <p class="la-block__label">信纸方向</p>
+                            <div class="la-orient-row" id="la-orient-row" role="radiogroup" aria-label="信纸方向">
+                                <button type="button" class="la-orient-btn is-active" data-orient="portrait">竖版</button>
+                                <button type="button" class="la-orient-btn" data-orient="landscape">横版</button>
+                            </div>
+                            <p class="la-block__hint">竖版为裁边拼接效果；横版直接使用原图横排，更适合宽幅信笺。</p>
+                        </div>
+
+                        <div class="la-block">
+                            <label class="la-field">
+                                <span class="la-field__label">网络图片地址</span>
+                                <input type="url" id="la-custom-image" class="la-input" placeholder="https://… 粘贴图片直链">
+                            </label>
+                            <p class="la-block__hint">竖版模式下横图会自动裁左右花边拼接；横版模式保留原图比例。需允许跨域。</p>
+                        </div>
+                    </div>
+
+                    <!-- 书写 -->
+                    <div class="la-tab-panel" data-panel="write" role="tabpanel" hidden>
+                        <div class="la-form-row la-form-row--2">
+                            <label class="la-field">
+                                <span class="la-field__label">致</span>
+                                <input type="text" id="la-to" class="la-input" maxlength="24" placeholder="那个放在心里的人">
+                            </label>
+                            <label class="la-field">
+                                <span class="la-field__label">署名</span>
+                                <input type="text" id="la-from" class="la-input" maxlength="24" placeholder="可留空">
+                            </label>
+                        </div>
+
+                        <label class="la-field">
+                            <span class="la-field__label">日期</span>
+                            <input type="text" id="la-date" class="la-input" maxlength="32">
+                        </label>
+
+                        <label class="la-field la-field--grow">
+                            <span class="la-field__label">正文</span>
+                            <textarea id="la-body" class="la-textarea" rows="5" placeholder="见字如晤。&#10;&#10;我把许多次欲言又止，都写进这封信里。"></textarea>
+                        </label>
+
+                        <label class="la-field">
+                            <span class="la-field__label">正文字体</span>
+                            <select id="la-font" class="la-select" aria-label="正文字体"></select>
+                        </label>
+
+                        <div class="la-tune-row">
+                            <label class="la-tune">
+                                <span class="la-tune__label">字号 <output id="la-size-out">20</output></span>
+                                <input type="range" id="la-size" min="16" max="26" value="20">
+                            </label>
+                            <label class="la-tune">
+                                <span class="la-tune__label">行距 <output id="la-leading-out">2.35</output></span>
+                                <input type="range" id="la-leading" min="1.8" max="2.8" step="0.05" value="2.35">
+                            </label>
+                        </div>
+
+                        <div class="la-export-bar">
+                            <select id="la-export-format" class="la-select" aria-label="导出格式">
+                                <option value="pdf">PDF</option>
+                                <option value="png">PNG</option>
+                            </select>
+                            <button type="button" class="la-btn la-btn--primary" id="la-export">导出信笺</button>
+                        </div>
+
+                        <div class="la-actions">
+                            <button type="button" class="la-btn la-btn--ghost" id="la-sample">示例</button>
+                            <button type="button" class="la-btn la-btn--ghost" id="la-clear">清空</button>
+                            <button type="button" class="la-btn la-btn--ghost" id="la-print">打印</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="la-preview-wrap" aria-label="书信预览">
+            <div class="la-preview-header">
+                <h2 class="la-preview-header__title" id="la-preview-title">预览</h2>
+                <span class="la-preview-badge" id="la-live-badge">实时</span>
+            </div>
+
+            <div class="la-preview-desk" id="la-preview-desk">
+                <div class="la-preview-scaler" id="la-preview-scaler">
+                    <div class="la-letter-stack" id="la-letter-stack" data-template="rose-garden" data-font="kaiti" aria-live="polite"></div>
+                </div>
+            </div>
+
+            <div class="la-letter-measure" id="la-letter-measure" aria-hidden="true">
+                <article class="la-letter la-letter--template">
+                    <div class="la-letter__sheet">
+                        <header class="la-letter__head">
+                            <p class="la-letter__salute">致 · <span>君</span></p>
+                            <time class="la-letter__date">日期</time>
+                        </header>
+                        <div class="la-letter__body">
+                            <div class="la-letter__body-rules" aria-hidden="true"></div>
+                            <div class="la-letter__body-flow" id="la-measure-flow"></div>
+                        </div>
+                        <footer class="la-letter__foot">
+                            <div class="la-letter__sign">署名</div>
+                            <div class="la-letter__seal"><span>君</span></div>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div class="la-export-overlay" id="la-export-overlay" hidden>
+        <div class="la-export-overlay__box">
+            <div class="la-export-spinner" aria-hidden="true"></div>
+            <p id="la-export-status">正在生成信笺…</p>
+        </div>
+    </div>
+
+    <script src="js/fonts.js" defer></script>
+    <script src="js/templates.js" defer></script>
+    <script src="js/paginate.js" defer></script>
+    <script src="js/vendor/html2canvas.min.js" defer></script>
+    <script src="js/vendor/jspdf.umd.min.js" defer></script>
+    <script src="js/export.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

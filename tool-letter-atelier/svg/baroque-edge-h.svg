@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 56" fill="none" preserveAspectRatio="none">
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="currentColor">
+    <!-- 细线延伸 -->
+    <path d="M0 28 H72" stroke-width="0.5" fill="none" opacity=".4"/>
+    <path d="M328 28 H400" stroke-width="0.5" fill="none" opacity=".4"/>
+    <!-- 主饰带 -->
+    <path d="M72 28 C88 12 100 12 116 28 C132 44 144 44 160 28 C176 12 188 12 204 28 C220 44 232 44 248 28 C264 12 276 12 292 28 C308 44 320 44 328 28" stroke-width="1.35" fill="none"/>
+    <path d="M88 28 C96 20 104 20 112 28 C104 36 96 36 88 28z" opacity=".24"/>
+    <path d="M168 28 C176 20 184 20 192 28 C184 36 176 36 168 28z" opacity=".24"/>
+    <path d="M248 28 C256 20 264 20 272 28 C264 36 256 36 248 28z" opacity=".22"/>
+    <!-- 中央纹章 -->
+    <ellipse cx="200" cy="28" rx="7" ry="10" stroke-width="1.1" fill="none"/>
+    <path d="M192 28 C196 18 204 18 208 28 C204 38 196 38 192 28z" opacity=".2"/>
+    <circle cx="200" cy="28" r="2.8" opacity=".52"/>
+    <path d="M184 28 C188 24 192 24 196 28" stroke-width="0.6" fill="none" opacity=".55"/>
+    <path d="M204 28 C208 24 212 24 216 28" stroke-width="0.6" fill="none" opacity=".55"/>
+    <!-- 珠饰 -->
+    <circle cx="128" cy="28" r="1.8" opacity=".42"/>
+    <circle cx="272" cy="28" r="1.8" opacity=".42"/>
+    <circle cx="152" cy="22" r="1.2" opacity=".32"/>
+    <circle cx="248" cy="22" r="1.2" opacity=".32"/>
+    <circle cx="152" cy="34" r="1.2" opacity=".32"/>
+    <circle cx="248" cy="34" r="1.2" opacity=".32"/>
+  </g>
+</svg>

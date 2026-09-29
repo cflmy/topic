@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 52" fill="none" preserveAspectRatio="none">
+  <g stroke="currentColor" stroke-linecap="round" fill="currentColor">
+    <path d="M0 26 H56" stroke-width="0.45" fill="none" opacity=".38"/>
+    <path d="M344 26 H400" stroke-width="0.45" fill="none" opacity=".38"/>
+    <!-- 藤蔓底线 -->
+    <path d="M56 26 C72 26 80 18 92 26 C104 34 112 34 124 26" stroke-width="0.7" fill="none" opacity=".55"/>
+    <path d="M276 26 C288 34 296 34 308 26 C320 18 328 26 344 26" stroke-width="0.7" fill="none" opacity=".55"/>
+    <!-- 花 1 -->
+    <circle cx="108" cy="26" r="7" stroke-width="0.9" fill="none"/>
+    <path d="M108 19 C112 15 116 15 120 19 C116 23 112 23 108 19z" opacity=".2"/>
+    <path d="M101 26 C105 22 109 22 113 26 C109 30 105 30 101 26z" opacity=".18"/>
+    <circle cx="108" cy="26" r="2.4" opacity=".34"/>
+  </g>
+  <g stroke="currentColor" fill="currentColor">
+    <!-- 中央大花 -->
+    <circle cx="200" cy="26" r="9.5" stroke-width="1" fill="none"/>
+    <path d="M200 16 C206 12 212 12 218 16 C212 20 206 20 200 16z" opacity=".22"/>
+    <path d="M190 26 C194 22 200 22 204 26 C200 30 194 30 190 26z" opacity=".2"/>
+    <path d="M200 36 C206 32 212 32 218 36 C212 40 206 40 200 36z" opacity=".2"/>
+    <path d="M210 26 C214 22 220 22 224 26 C220 30 214 30 210 26z" opacity=".2"/>
+    <circle cx="200" cy="26" r="3.2" opacity=".4"/>
+    <!-- 花 3 -->
+    <circle cx="292" cy="26" r="7" stroke-width="0.9" fill="none"/>
+    <path d="M292 19 C296 15 300 15 304 19 C300 23 296 23 292 19z" opacity=".2"/>
+    <path d="M285 26 C289 22 293 22 297 26 C293 30 289 30 285 26z" opacity=".18"/>
+    <circle cx="292" cy="26" r="2.4" opacity=".34"/>
+    <!-- 小叶 -->
+    <path d="M88 30 C84 34 78 32 80 28" stroke-width="0.5" fill="none" opacity=".45"/>
+    <path d="M312 30 C316 34 322 32 320 28" stroke-width="0.5" fill="none" opacity=".45"/>
+    <path d="M168 22 C172 18 178 18 182 22" stroke-width="0.45" fill="none" opacity=".4"/>
+    <path d="M218 22 C222 18 228 18 232 22" stroke-width="0.45" fill="none" opacity=".4"/>
+    <path d="M168 30 C172 34 178 34 182 30" stroke-width="0.45" fill="none" opacity=".4"/>
+    <path d="M218 30 C222 34 228 34 232 30" stroke-width="0.45" fill="none" opacity=".4"/>
+  </g>
+</svg>
