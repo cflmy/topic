@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "tool-letter-atelier",
+    "title": "见君信笺",
+    "summary": "书信排版工具：巴洛克/洛可可/鲜花边纹，自定义边框与书写区配色，实时预览，导出 PDF 或图片。",
+    "metaDescription": "暗恋见君信笺工具：自定义信纸色与高雅边纹组合，手写字体实时预览，支持 PDF/PNG 导出打印寄送。",
+    "metaKeywords": "书信,信笺,工具,手写字体,暗恋,情书,排版,巴洛克,边纹",
+    "cover": "tool-letter-atelier.webp",
+    "sortOrder": 60,
+    "published": true
+  },
+  {
+    "slug": "fox-and-rabbit",
+    "title": "狐狸与兔子",
+    "summary": "原创治愈童话：山海之间，小狐狸与小兔子从误会到相伴。水彩绘本二十页翻页阅读，附故事全文。",
+    "metaDescription": "暗恋见君原创治愈童话《狐狸与兔子》：山的那边与海边小屋，狡诈的小狐狸遇见天真的小兔子。水彩绘本翻页与全文朗读。",
+    "metaKeywords": "狐狸与兔子,小狐狸和小兔子,治愈童话,暗恋见君,专题,绘本",
+    "cover": "fox-and-rabbit.webp",
+    "sortOrder": 22,
+    "published": true
+  },
+  {
+    "slug": "developer-pingan",
+    "title": "平安 · 站点创作者",
+    "summary": "暗恋见君与 cflmy.cn 的开发者 pingan — 粉意花间专题，蓝玫瑰、百合、茉莉与桃花四句，兼述独立开发与社区营造。",
+    "metaDescription": "平安（pingan）— 暗恋见君论坛与 www.cflmy.cn 的独立开发者。Web 设计、网站运维、Python 与全栈实践；长风恋暮云个人主页。",
+    "metaKeywords": "平安,pingan,cflmy.cn,开发者,程序员,暗恋见君,专题",
+    "cover": "developer-pingan.webp",
+    "sortOrder": 20,
+    "published": true
+  },
+  {
+    "slug": "pass-your-world",
+    "title": "从你的全世界路过",
+    "summary": "张嘉佳睡前故事与同名电影——如你一般的人，路过，终有重逢。Three.js 花海纵深影像，温柔美好的情感专题。",
+    "metaDescription": "《从你的全世界路过》专题：原著与电影、稻城重庆风景、经典语录与人物。风车花海封面、纵深图片与 3D 粒子动效。",
+    "metaKeywords": "从你的全世界路过,张嘉佳,稻城,重庆,如你一般的人,专题",
+    "cover": "pass-your-world.webp",
+    "sortOrder": 18,
+    "published": true
+  },
+  {
+    "slug": "poem-xiangfuren",
+    "title": "九歌 · 湘夫人",
+    "summary": "屈原《九歌·湘夫人》：北渚期约、沅芷澧兰、思公子兮未敢言。雾白轻哀排版，Three.js 雾粒背景。",
+    "metaDescription": "屈原《九歌·湘夫人》专题：全诗四章、楚辞赏析、与暗恋见君论坛主题呼应。袅袅兮秋风，思公子兮未敢言。",
+    "metaKeywords": "屈原,湘夫人,九歌,楚辞,洞庭,沅芷澧兰,专题",
+    "cover": "poem-xiangfuren.webp",
+    "sortOrder": 16,
+    "published": true
+  },
+  {
+    "slug": "poem-chaitoufeng",
+    "title": "钗头凤 · 红酥手",
+    "summary": "南宋陆游《钗头凤》：沈园重逢、错过的爱情。错、错、错；莫、莫、莫——Three.js 春雨落花中的词意专题。",
+    "metaDescription": "陆游《钗头凤·红酥手》专题：全词、沈园旧事、意象赏析与唐婉和词。红酥手、宫墙柳、桃花落；沉浸式 3D 春雨落花读词。",
+    "metaKeywords": "陆游,钗头凤,红酥手,唐婉,沈园,宋词,专题",
+    "cover": "poem-chaitoufeng.webp",
+    "sortOrder": 15,
+    "published": true
+  },
+  {
+    "slug": "author-zhangailing",
+    "title": "张爱玲 · 海上花开",
+    "summary": "倾城之恋、金锁记与半生缘——在 Three.js 星尘与民国月色中，重遇海派文学最冷艳的灵魂。",
+    "metaDescription": "张爱玲（1920—1995）专题：生平年表、代表作导读与经典名句。倾城之恋、金锁记、半生缘、红玫瑰与白玫瑰——海派文学沉浸式策展。",
+    "metaKeywords": "张爱玲,Eileen Chang,倾城之恋,金锁记,半生缘,海派文学,专题",
+    "cover": "author-zhangailing.webp",
+    "sortOrder": 10,
+    "published": true
+  }
+]

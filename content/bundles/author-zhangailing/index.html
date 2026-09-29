@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张爱玲 · 海上花开</title>
+    <meta name="description" content="张爱玲（1920—1995），中国现代文学史上独具魅力的作家。倾城之恋、金锁记、半生缘——在乱世上海与苍凉美国之间，写下人性与爱情的精密解剖。">
+    <link rel="preload" href="fonts/noto-serif-sc-300.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/fonts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css/main.css"></noscript>
+    <meta name="金网奖网页创意大赛" content="平安" />
+</head>
+<body>
+    <canvas id="zhang-canvas" aria-hidden="true"></canvas>
+    <div class="zhang-grain" aria-hidden="true"></div>
+
+    <nav class="zhang-nav">
+        <a href="#hero" class="zhang-nav__brand">张爱玲</a>
+        <div class="zhang-nav__links">
+            <a href="#life">生平</a>
+            <a href="#works">作品</a>
+            <a href="#quotes">名句</a>
+            <a href="#legacy">余韵</a>
+        </div>
+        <a href="https://www.anlian.cyou/topics/" class="zhang-nav__back">← 书架</a>
+    </nav>
+
+    <main class="zhang-main">
+        <header id="hero" class="zhang-hero section" data-section="0">
+            <p class="zhang-hero__eyebrow">Eileen Chang · 1920 — 1995</p>
+            <h1 class="zhang-hero__title">
+                <span class="zhang-hero__line">海上</span>
+                <span class="zhang-hero__line zhang-hero__line--accent">花开</span>
+            </h1>
+            <p class="zhang-hero__sub">在倾城暮色里，把爱情写成算术，把人性写成冷月。</p>
+            <div class="zhang-hero__scroll" id="scroll-hint">
+                <span>向下探索</span>
+                <i class="zhang-chevron"></i>
+            </div>
+        </header>
+
+        <section id="life" class="zhang-life section" data-section="1">
+            <div class="zhang-panel">
+                <h2 class="zhang-section-title">生平掠影</h2>
+                <p class="zhang-lead">
+                    张爱玲，原名<strong>张煐</strong>，笔名<strong>梁京</strong>。祖籍河北丰润，生于上海。
+                    祖父张佩纶为清末名臣，外祖母为李鸿章之女——贵族门楣与摩登都市在她身上叠成一层冷艳的光。
+                </p>
+                <div class="zhang-timeline">
+                    <article class="zhang-time">
+                        <time>1920</time>
+                        <h3>生于上海</h3>
+                        <p>公共租界西区，没落贵族府邸。童年在天津、上海间迁徙，早慧善文。</p>
+                    </article>
+                    <article class="zhang-time">
+                        <time>1932</time>
+                        <h3>初试啼声</h3>
+                        <p>圣玛利亚女校校刊发表《不幸的她》；后写《迟暮》《秋雨》，展露敏锐感受力。</p>
+                    </article>
+                    <article class="zhang-time">
+                        <time>1939</time>
+                        <h3>香港岁月</h3>
+                        <p>入读香港大学文学系；因战事中断学业返沪，在《西风》发表《天才梦》。</p>
+                    </article>
+                    <article class="zhang-time zhang-time--peak">
+                        <time>1943—45</time>
+                        <h3>上海鼎盛期</h3>
+                        <p>沦陷时期创作高峰：《倾城之恋》《金锁记》《茉莉香片》《封锁》等相继问世，成为海派文学旗帜。</p>
+                    </article>
+                    <article class="zhang-time">
+                        <time>1955</time>
+                        <h3>赴美定居</h3>
+                        <p>离沪赴美，以英文写作并译介中国古典小说；后专注红学研究，著《红楼梦魇》。</p>
+                    </article>
+                    <article class="zhang-time">
+                        <time>1995</time>
+                        <h3>洛杉矶</h3>
+                        <p>9月8日因心血管病去世，享年七十五岁。作品由皇冠等出版社系统重版，影响绵延至今。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="zhang-works section" data-section="2">
+            <div class="zhang-panel zhang-panel--wide">
+                <h2 class="zhang-section-title">代表作品</h2>
+                <p class="zhang-lead zhang-lead--center">心理写实、都市寓言、苍凉美学——她把女人的欲望与算计写得像珠宝一样精确。</p>
+                <div class="zhang-works-grid">
+                    <article class="zhang-work-card" data-tilt>
+                        <span class="zhang-work-card__year">1943</span>
+                        <h3>倾城之恋</h3>
+                        <p>白流苏与范柳原在香港陷落前的爱情博弈，「倾城」之下皆是算计与寂寞。</p>
+                    </article>
+                    <article class="zhang-work-card" data-tilt>
+                        <span class="zhang-work-card__year">1943</span>
+                        <h3>金锁记</h3>
+                        <p>曹七巧被黄金与怨毒囚禁的一生，中国现代文学中最令人战栗的母亲形象之一。</p>
+                    </article>
+                    <article class="zhang-work-card" data-tilt>
+                        <span class="zhang-work-card__year">1944</span>
+                        <h3>红玫瑰与白玫瑰</h3>
+                        <p>佟振保的「对」与「不对」——男性叙事里的虚荣、怯懦与自我欺骗。</p>
+                    </article>
+                    <article class="zhang-work-card" data-tilt>
+                        <span class="zhang-work-card__year">1943</span>
+                        <h3>第一炉香</h3>
+                        <p>葛薇龙踏入殖民半山别墅，青春在奢靡与堕落之间销蚀成灰。</p>
+                    </article>
+                    <article class="zhang-work-card" data-tilt>
+                        <span class="zhang-work-card__year">1950</span>
+                        <h3>十八春 · 半生缘</h3>
+                        <p>顾曼桢与沈世钧十八年离合，世情如网，缘分成劫，后定名《半生缘》。</p>
+                    </article>
+                    <article class="zhang-work-card" data-tilt>
+                        <span class="zhang-work-card__year">1944</span>
+                        <h3>封锁</h3>
+                        <p>一辆电车、一刻钟停顿，都市男女在非常时刻里交换的短暂真心。</p>
+                    </article>
+                    <article class="zhang-work-card" data-tilt>
+                        <span class="zhang-work-card__year">集</span>
+                        <h3>流言</h3>
+                        <p>散文集：穿衣、吃饭、看戏、恋爱——生活被写成犀利的随笔标本。</p>
+                    </article>
+                    <article class="zhang-work-card" data-tilt>
+                        <span class="zhang-work-card__year">1976</span>
+                        <h3>红楼梦魇</h3>
+                        <p>晚年的红学笔记，以小说家之眼重读曹雪芹，别是一番苍凉密语。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="quotes" class="zhang-quotes section" data-section="3">
+            <div class="zhang-panel">
+                <h2 class="zhang-section-title">纸上余温</h2>
+                <div class="zhang-quote-carousel" id="quote-carousel">
+                    <blockquote class="zhang-quote is-active">
+                        <p>生命是一袭华美的袍，爬满了蚤子。</p>
+                        <cite>——《天才梦》</cite>
+                    </blockquote>
+                    <blockquote class="zhang-quote">
+                        <p>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里，没有早一步，也没有晚一步，刚巧赶上了。</p>
+                        <cite>——《爱》</cite>
+                    </blockquote>
+                    <blockquote class="zhang-quote">
+                        <p>因为懂得，所以慈悲。</p>
+                        <cite>——广为传诵</cite>
+                    </blockquote>
+                    <blockquote class="zhang-quote">
+                        <p>笑，全世界便与你同笑；哭，你便独自哭。</p>
+                        <cite>——《花凋》</cite>
+                    </blockquote>
+                </div>
+                <div class="zhang-quote-dots" id="quote-dots"></div>
+            </div>
+        </section>
+
+        <section id="legacy" class="zhang-legacy section" data-section="4">
+            <div class="zhang-panel zhang-panel--finale">
+                <h2 class="zhang-section-title">文学余韵</h2>
+                <p class="zhang-lead">
+                    夏志清称她开创了「中国现代文学史上一个独具魅力的作家」传统；
+                    李欧梵视其为海派都市现代性的重要声音。影视改编让《倾城之恋》《色，戒》《半生缘》一次次回到大众视野，
+                    而文字本身的冷峻与华丽，仍只属于那个在纸上点燃香烟的女人。
+                </p>
+                <p class="zhang-footer-note">
+                    本专题为暗恋见君论坛读者策展 · 资料整理自公开文学史与作家年表 · 仅供学习与欣赏
+                </p>
+                <a href="https://www.anlian.cyou/topics/" class="zhang-btn">返回专题书架</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/three.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

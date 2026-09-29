@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" fill="none">
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 藤蔓 -->
+    <path d="M8 102 C8 52 52 8 102 8" stroke-width="0.9" fill="none" opacity=".5"/>
+    <path d="M18 92 C24 60 52 34 92 22" stroke-width="0.75" fill="none" opacity=".65"/>
+    <path d="M14 78 Q28 68 40 58" stroke-width="0.55" fill="none" opacity=".55"/>
+    <path d="M34 58 Q48 48 62 36" stroke-width="0.55" fill="none" opacity=".5"/>
+    <path d="M58 34 Q72 26 84 18" stroke-width="0.5" fill="none" opacity=".45"/>
+  </g>
+  <g fill="currentColor" stroke="currentColor">
+    <!-- 大花 -->
+    <circle cx="26" cy="62" r="9" stroke-width="0.95" fill="none"/>
+    <path d="M26 53 C30 49 34 49 38 53 C34 57 30 57 26 53z" opacity=".22"/>
+    <path d="M18 62 C22 58 26 58 30 62 C26 66 22 66 18 62z" opacity=".2"/>
+    <path d="M26 71 C30 67 34 67 38 71 C34 75 30 75 26 71z" opacity=".2"/>
+    <path d="M34 62 C38 58 42 58 46 62 C42 66 38 66 34 62z" opacity=".2"/>
+    <circle cx="26" cy="62" r="3.2" opacity=".38"/>
+    <!-- 中花 -->
+    <circle cx="48" cy="40" r="7" stroke-width="0.85" fill="none"/>
+    <path d="M48 33 C52 29 56 29 60 33 C56 37 52 37 48 33z" opacity=".18"/>
+    <path d="M41 40 C45 36 49 36 53 40 C49 44 45 44 41 40z" opacity=".16"/>
+    <circle cx="48" cy="40" r="2.4" opacity=".32"/>
+    <!-- 小花 -->
+    <circle cx="68" cy="24" r="5.5" stroke-width="0.75" fill="none"/>
+    <circle cx="68" cy="24" r="1.8" opacity=".28"/>
+    <path d="M68 18 C71 16 74 16 77 18" stroke-width="0.45" fill="none" opacity=".4"/>
+    <path d="M62 24 C64 21 67 21 70 24" stroke-width="0.45" fill="none" opacity=".4"/>
+    <!-- 叶片 -->
+    <path d="M12 72 C8 66 8 58 14 54 C18 60 16 68 12 72z" opacity=".2"/>
+    <path d="M36 48 C32 44 32 38 38 34 C42 40 40 46 36 48z" opacity=".18"/>
+    <path d="M56 30 C52 26 54 20 60 18 C62 24 60 28 56 30z" opacity=".16"/>
+    <path d="M78 14 C74 10 76 6 82 6 C82 10 80 14 78 14z" opacity=".14"/>
+  </g>
+</svg>

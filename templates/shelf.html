@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site_title }}</title>
+  <meta name="description" content="{{ meta_description }}">
+  {{ preload_block }}
+  <link rel="stylesheet" href="/css/shelf.css">
+</head>
+<body>
+  <main class="shelf-wrap">
+    <header class="shelf-header">
+      <h1 class="shelf-title">{{ site_name }}</h1>
+      <p class="shelf-lead">{{ site_tagline }}</p>
+    </header>
+
+    {{ books_block }}
+
+    <footer class="shelf-footer">
+      <p>{{ site_name }} · 静态策展</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,479 @@
+/* 张爱玲专题 — 海上花开 */
+
+:root {
+  --zhang-ink: #0a0809;
+  --zhang-wine: #6b1e3a;
+  --zhang-gold: #d4af37;
+  --zhang-gold-dim: rgba(212, 175, 55, 0.45);
+  --zhang-paper: rgba(255, 248, 240, 0.92);
+  --zhang-glass: rgba(20, 12, 18, 0.72);
+  --zhang-border: rgba(212, 175, 55, 0.22);
+  --font-serif: 'Noto Serif SC', 'Songti SC', serif;
+  --font-display: 'Ma Shan Zheng', 'Noto Serif SC', serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  color: var(--zhang-paper);
+  background: var(--zhang-ink);
+  overflow-x: hidden;
+  line-height: 1.75;
+}
+
+#zhang-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.zhang-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* —— 导航 —— */
+.zhang-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(180deg, rgba(10, 8, 9, 0.85) 0%, transparent 100%);
+  backdrop-filter: blur(8px);
+}
+
+.zhang-nav__brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--zhang-gold);
+  text-decoration: none;
+  letter-spacing: 0.15em;
+}
+
+.zhang-nav__links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.zhang-nav__links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 248, 240, 0.75);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.zhang-nav__links a:hover {
+  color: var(--zhang-gold);
+}
+
+.zhang-nav__back {
+  font-size: 0.75rem;
+  color: var(--zhang-gold-dim);
+  text-decoration: none;
+  border: 1px solid var(--zhang-border);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  transition: background 0.25s, color 0.25s;
+}
+
+.zhang-nav__back:hover {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--zhang-gold);
+}
+
+/* —— 主内容 —— */
+.zhang-main {
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.25rem 4rem;
+}
+
+.zhang-panel {
+  max-width: 42rem;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  background: var(--zhang-glass);
+  border: 1px solid var(--zhang-border);
+  border-radius: 4px;
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+}
+
+.zhang-panel--wide {
+  max-width: 56rem;
+}
+
+.zhang-panel--finale {
+  text-align: center;
+}
+
+.zhang-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--zhang-gold);
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.zhang-lead {
+  font-size: 1rem;
+  color: rgba(255, 248, 240, 0.88);
+  margin: 0 0 2rem;
+}
+
+.zhang-lead--center {
+  text-align: center;
+}
+
+.zhang-lead strong {
+  color: var(--zhang-gold);
+  font-weight: 600;
+}
+
+/* —— Hero —— */
+.zhang-hero {
+  flex-direction: column;
+  text-align: center;
+}
+
+.zhang-hero__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--zhang-gold-dim);
+  margin: 0 0 1.5rem;
+}
+
+.zhang-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 18vw, 9rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0 0 1.5rem;
+  text-shadow: 0 0 60px rgba(212, 175, 55, 0.35);
+}
+
+.zhang-hero__line {
+  display: block;
+}
+
+.zhang-hero__line--accent {
+  background: linear-gradient(135deg, #f5e6c8 0%, var(--zhang-gold) 40%, var(--zhang-wine) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.zhang-hero__sub {
+  max-width: 22rem;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+  color: rgba(255, 248, 240, 0.78);
+  letter-spacing: 0.08em;
+}
+
+.zhang-hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--zhang-gold-dim);
+  animation: zhang-float 2.5s ease-in-out infinite;
+}
+
+.zhang-chevron {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid var(--zhang-gold);
+  border-bottom: 1px solid var(--zhang-gold);
+  transform: rotate(45deg);
+}
+
+@keyframes zhang-float {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+/* —— 时间线 —— */
+.zhang-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1px solid var(--zhang-border);
+  margin-left: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.zhang-time {
+  position: relative;
+  padding-bottom: 1.75rem;
+}
+
+.zhang-time::before {
+  content: '';
+  position: absolute;
+  left: -1.65rem;
+  top: 0.35rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--zhang-ink);
+  border: 2px solid var(--zhang-gold-dim);
+  box-shadow: 0 0 12px var(--zhang-gold-dim);
+}
+
+.zhang-time--peak::before {
+  background: var(--zhang-gold);
+  border-color: var(--zhang-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+.zhang-time time {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--zhang-gold);
+}
+
+.zhang-time h3 {
+  margin: 0.25rem 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.zhang-time p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 248, 240, 0.75);
+}
+
+/* —— 作品卡片 —— */
+.zhang-works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1.25rem;
+}
+
+.zhang-work-card {
+  padding: 1.35rem 1.15rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 2px;
+  transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.zhang-work-card:hover {
+  border-color: var(--zhang-gold-dim);
+  box-shadow: 0 12px 40px rgba(107, 30, 58, 0.4);
+}
+
+.zhang-work-card__year {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--zhang-wine);
+  background: rgba(107, 30, 58, 0.35);
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.zhang-work-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--zhang-gold);
+  font-weight: 600;
+}
+
+.zhang-work-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(255, 248, 240, 0.72);
+  line-height: 1.6;
+}
+
+/* —— 名句 —— */
+.zhang-quote-carousel {
+  position: relative;
+  min-height: 10rem;
+}
+
+.zhang-quote {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 1rem 0.5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+.zhang-quote.is-active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.zhang-quote p {
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+  font-weight: 300;
+  line-height: 1.9;
+  margin: 0 0 1rem;
+  text-align: center;
+  color: rgba(255, 248, 240, 0.95);
+}
+
+.zhang-quote cite {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: normal;
+  color: var(--zhang-gold-dim);
+  letter-spacing: 0.1em;
+}
+
+.zhang-quote-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.zhang-quote-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(212, 175, 55, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.zhang-quote-dots button.is-active {
+  background: var(--zhang-gold);
+  transform: scale(1.2);
+}
+
+/* —— 结尾 —— */
+.zhang-footer-note {
+  font-size: 0.75rem;
+  color: rgba(255, 248, 240, 0.45);
+  margin: 1.5rem 0 2rem;
+}
+
+.zhang-btn {
+  display: inline-block;
+  padding: 0.65rem 1.75rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--zhang-ink);
+  background: linear-gradient(135deg, #f5e6c8, var(--zhang-gold));
+  text-decoration: none;
+  border-radius: 2px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.zhang-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(212, 175, 55, 0.35);
+}
+
+/* —— 入场动画 —— */
+.section .zhang-panel {
+  opacity: 0;
+  transform: translateY(48px);
+}
+
+.section.is-visible .zhang-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zhang-hero .zhang-hero__title,
+.zhang-hero .zhang-hero__eyebrow,
+.zhang-hero .zhang-hero__sub,
+.zhang-hero .zhang-hero__scroll {
+  opacity: 0;
+  animation: zhang-fade-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.zhang-hero .zhang-hero__eyebrow { animation-delay: 0.2s; }
+.zhang-hero .zhang-hero__title { animation-delay: 0.45s; }
+.zhang-hero .zhang-hero__sub { animation-delay: 0.7s; }
+.zhang-hero .zhang-hero__scroll { animation-delay: 1s; }
+
+@keyframes zhang-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .zhang-nav__links {
+    display: none;
+  }
+
+  .zhang-panel {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .zhang-works-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .zhang-hero__scroll { animation: none; }
+  .section .zhang-panel { opacity: 1; transform: none; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平安 · 站点创作者</title>
+    <meta name="description" content="平安（pingan）— 暗恋见君论坛与 www.cflmy.cn 的开发者。在花间粉意里，讲述独立开发与社区营造的故事。">
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
+    <meta name="金网奖网页创意大赛" content="平安" />
+</head>
+<body>
+    <canvas id="creator-canvas" aria-hidden="true"></canvas>
+    <div class="creator-glow creator-glow--tl" aria-hidden="true"></div>
+    <div class="creator-glow creator-glow--br" aria-hidden="true"></div>
+
+    <nav class="creator-nav">
+        <a href="#hero" class="creator-nav__brand">暗恋见君 · 创作者</a>
+        <div class="creator-nav__links">
+            <a href="#about">关于</a>
+            <a href="#flowers">花间</a>
+            <a href="#stack">技能</a>
+            <a href="#work">项目</a>
+            <a href="#contact">联系</a>
+        </div>
+        <a href="https://www.anlian.cyou/topics/" class="creator-nav__back">返回书架</a>
+    </nav>
+
+    <main class="creator-main">
+        <header id="hero" class="creator-hero section is-visible">
+            <p class="creator-hero__eyebrow">长风恋暮云 · cflmy.cn</p>
+            <h1 class="creator-hero__name">平安</h1>
+            <p class="creator-hero__role">pingan · 学生 / 程序员 / 暗恋见君站点创作者</p>
+            <p class="creator-hero__tagline" id="typed-line"></p>
+
+            <ul class="creator-blossom-strip" aria-label="花卉意象">
+                <li class="creator-blossom creator-blossom--rose">
+                    <span class="creator-blossom__name">蓝玫瑰</span>
+                    <span class="creator-blossom__hint">奇迹与梦幻</span>
+                </li>
+                <li class="creator-blossom creator-blossom--lily">
+                    <span class="creator-blossom__name">百合</span>
+                    <span class="creator-blossom__hint">忠贞与高洁</span>
+                </li>
+                <li class="creator-blossom creator-blossom--jasmine">
+                    <span class="creator-blossom__name">茉莉</span>
+                    <span class="creator-blossom__hint">纯洁与清远</span>
+                </li>
+                <li class="creator-blossom creator-blossom--peach">
+                    <span class="creator-blossom__name">桃花</span>
+                    <span class="creator-blossom__hint">春色与思念</span>
+                </li>
+            </ul>
+
+            <div class="creator-hero__actions">
+                <a href="https://www.cflmy.cn" class="creator-btn creator-btn--primary" target="_blank" rel="noopener noreferrer">访问个人主页</a>
+                <a href="#work" class="creator-btn creator-btn--ghost">查看项目</a>
+            </div>
+
+            <blockquote class="creator-verse-card" id="verse-card">
+                <p class="creator-verse-card__text" id="verse-text">人面不知何处去，桃花依旧笑春风。</p>
+                <footer class="creator-verse-card__from" id="verse-from">崔护《题都城南庄》</footer>
+            </blockquote>
+        </header>
+
+        <section id="about" class="section" data-section="1">
+            <div class="creator-panel">
+                <h2 class="creator-h2"><span class="creator-h2__mark">壹</span>关于开发者</h2>
+                <div class="creator-split">
+                    <div class="creator-avatar-wrap">
+                        <img src="images/avatar.webp" srcset="images/avatar-96.webp 96w, images/avatar.webp 200w" sizes="200px" alt="平安" width="200" height="200" loading="lazy" decoding="async">
+                        <div class="creator-avatar__ring"></div>
+                    </div>
+                    <div class="creator-prose">
+                        <p>我是<strong>平安</strong>（<code>pingan</code>），一名来自安徽的计算机开发爱好者。</p>
+                        <p>很高兴你能看到这里，看到这个论坛，希望温柔的你能遇到像花笺一样温柔的人。</p>
+                        <p>不管你身在何方，希望你能在这里找到一些温暖，找到一些共鸣，找到一些帮助。</p>
+                        <ul class="creator-tags">
+                            <li>Web 设计</li>
+                            <li>网站运维</li>
+                            <li>需求沟通</li>
+                            <li>独立部署</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="flowers" class="section" data-section="2">
+            <div class="creator-panel creator-panel--wide">
+                <h2 class="creator-h2"><span class="creator-h2__mark">贰</span>花间四句</h2>
+                <p class="creator-lead">蓝玫瑰、百合、茉莉与桃花……是作者很喜欢的花……</p>
+                <div class="creator-flower-grid">
+                    <article class="creator-flower-card creator-flower-card--rose">
+                        <div class="creator-flower-card__icon" aria-hidden="true">🌹</div>
+                        <h3>蓝玫瑰</h3>
+                        <p class="creator-flower-card__verse">世间本无双色玫，偏教心事染幽蓝。<br>愿将代码研成露，浇注梦溪绽一端。</p>
+                        <p class="creator-flower-card__note">花语：不可能的奇迹，与「把梦做成可点击的页面」。</p>
+                    </article>
+                    <article class="creator-flower-card creator-flower-card--lily">
+                        <div class="creator-flower-card__icon" aria-hidden="true">🤍</div>
+                        <h3>百合</h3>
+                        <p class="creator-flower-card__verse">真葩固自异，美艳照华馆。<br>并萼虽可佳，幽根独无伴。</p>
+                        <p class="creator-flower-card__note">韩维《百合花》· 宋 — 洁净与孤高，亦像守夜部署的安静。</p>
+                    </article>
+                    <article class="creator-flower-card creator-flower-card--jasmine">
+                        <div class="creator-flower-card__icon" aria-hidden="true">✿</div>
+                        <h3>茉莉</h3>
+                        <p class="creator-flower-card__verse">茉莉开时香满路，月白风清夜未央。<br>好将清气付人间，不与浮华竞短长。</p>
+                        <p class="creator-flower-card__note">化用杨万里、民间茉莉意象 — 幽香远播，如社区里慢慢熟络的问候。</p>
+                    </article>
+                    <article class="creator-flower-card creator-flower-card--peach">
+                        <div class="creator-flower-card__icon" aria-hidden="true">🌸</div>
+                        <h3>桃花</h3>
+                        <p class="creator-flower-card__verse">人面不知何处去，桃花依旧笑春风。</p>
+                        <p class="creator-flower-card__note">崔护《题都城南庄》· 唐 — 暗恋见君之名，亦在这一句春水里。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="section" data-section="3">
+            <div class="creator-panel creator-panel--wide">
+                <h2 class="creator-h2"><span class="creator-h2__mark">叁</span>技能栈</h2>
+                <p class="creator-lead">作者掌握的工具链；进度仅为个人主页自评，如花瓣深浅，仅作参考。</p>
+                <div class="creator-skills">
+                    <div class="creator-skill" data-level="90"><span class="creator-skill__name">LaTeX / Markdown / PlantUML</span><span class="creator-skill__bar"></span><span class="creator-skill__pct">90%</span></div>
+                    <div class="creator-skill" data-level="85"><span class="creator-skill__name">Python</span><span class="creator-skill__bar"></span><span class="creator-skill__pct">85%</span></div>
+                    <div class="creator-skill" data-level="75"><span class="creator-skill__name">C / C++</span><span class="creator-skill__bar"></span><span class="creator-skill__pct">75%</span></div>
+                    <div class="creator-skill" data-level="60"><span class="creator-skill__name">HTML / CSS / JavaScript</span><span class="creator-skill__bar"></span><span class="creator-skill__pct">60%</span></div>
+                    <div class="creator-skill" data-level="30"><span class="creator-skill__name">Blender</span><span class="creator-skill__bar"></span><span class="creator-skill__pct">30%</span></div>
+                    <div class="creator-skill" data-level="25"><span class="creator-skill__name">PHP</span><span class="creator-skill__bar"></span><span class="creator-skill__pct">25%</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="section" data-section="4">
+            <div class="creator-panel creator-panel--wide">
+                <h2 class="creator-h2"><span class="creator-h2__mark">肆</span>项目</h2>
+                <div class="creator-projects">
+                    <article class="creator-project creator-project--featured" data-tilt>
+                        <span class="creator-project__tag">本论坛</span>
+                        <h3>暗恋见君</h3>
+                        <p>匿名与实名双模式的中文社区论坛。帖子、新闻、聊天与专题策展——粉意界面与书架专题，皆在此生长。</p>
+                        <span class="creator-project__meta">Django · Channels · PostgreSQL</span>
+                    </article>
+                    <article class="creator-project" data-tilt>
+                        <h3>长风恋暮云</h3>
+                        <p>个人主页与作品入口，聚合博客、服务介绍与联系方式。</p>
+                        <a href="https://www.cflmy.cn" target="_blank" rel="noopener" class="creator-link">www.cflmy.cn →</a>
+                    </article>
+                    <article class="creator-project" data-tilt>
+                        <h3>创明笔记</h3>
+                        <p>卡片式笔记实验：用卡片组织思维结构，探索非线性写作。</p>
+                        <a href="https://www.cflmy.com" target="_blank" rel="noopener" class="creator-link">www.cflmy.com →</a>
+                    </article>
+                    <article class="creator-project" data-tilt>
+                        <h3>Blog</h3>
+                        <p>技术记录与随笔，希望能对路过的读者有点帮助。</p>
+                        <a href="https://hexo.cflmy.cn" target="_blank" rel="noopener" class="creator-link">hexo.cflmy.cn →</a>
+                    </article>
+                    <article class="creator-project" data-tilt>
+                        <h3>在线幻灯片</h3>
+                        <p>Web 端演示文稿平台，支持四种主题。</p>
+                    </article>
+                    <article class="creator-project" data-tilt>
+                        <h3>OCR API</h3>
+                        <p>基于 PaddleOCR 的调用封装，便于快速试用手写与扫描识别。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section" data-section="5">
+            <div class="creator-panel creator-panel--center">
+                <h2 class="creator-h2"><span class="creator-h2__mark">伍</span>联系</h2>
+                <p class="creator-lead">愿以花信相邀：若有想法、合作或站点反馈，欢迎来信或于个人主页留言。</p>
+                <dl class="creator-contact">
+                    <div><dt>姓名</dt><dd>平安（pingan）</dd></div>
+                    <div><dt>所在地</dt><dd>安徽，中国</dd></div>
+                    <div><dt>邮箱</dt><dd>pingan@cflmy.com</dd></div>
+                    <div><dt>主页</dt><dd><a href="https://www.cflmy.cn" target="_blank" rel="noopener">https://www.cflmy.cn</a></dd></div>
+                </dl>
+                <p class="creator-foot">暗恋见君论坛 · 站点创作者专题 · 粉意花间版</p>
+                <a href="https://www.anlian.cyou/topics/" class="creator-btn creator-btn--ghost">返回专题书架</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

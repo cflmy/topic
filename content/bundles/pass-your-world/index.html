@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从你的全世界路过</title>
+    <meta name="description" content="张嘉佳《从你的全世界路过》——睡前故事、电影与稻城。如你一般的人，路过，终有重逢。温柔 3D 花海与纵深影像专题。">
+    <link rel="modulepreload" href="js/three.module.min.js">
+    <link rel="preload" as="image" href="images/hero-far-640.webp" imagesrcset="images/hero-far-400.webp 400w, images/hero-far-640.webp 640w, images/hero-far-1280.webp 1280w" imagesizes="100vw">
+    <style>
+      .pyw-hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 1.25rem 3rem;overflow:hidden}
+      .pyw-hero__layers{position:absolute;inset:0;z-index:0}
+      .pyw-hero__layer{position:absolute;width:120%;height:120%;object-fit:cover;left:-10%}
+      .pyw-hero__content{position:relative;z-index:2;text-align:center}
+    </style>
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./js/three.module.min.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <canvas id="pyw-canvas" aria-hidden="true"></canvas>
+    <div class="pyw-sky-glow" aria-hidden="true"></div>
+
+    <nav class="pyw-nav">
+        <a href="#hero" class="pyw-nav__brand">全世界路过</a>
+        <div class="pyw-nav__links">
+            <a href="#about">遇见</a>
+            <a href="#someone">如你</a>
+            <a href="#scenes">风景</a>
+            <a href="#quotes-book">原著</a>
+            <a href="#quotes-film">电影</a>
+            <a href="#pass">路过</a>
+        </div>
+        <a href="https://www.anlian.cyou/topics/" class="pyw-nav__back">← 书架</a>
+    </nav>
+
+    <main class="pyw-main">
+        <header id="hero" class="pyw-hero section is-visible">
+            <div class="pyw-hero__layers" aria-hidden="true">
+                <picture>
+                    <source type="image/webp" srcset="images/hero-far-400.webp 400w, images/hero-far-640.webp 640w, images/hero-far-1280.webp 1280w" sizes="100vw">
+                    <img class="pyw-hero__layer pyw-hero__layer--far" src="images/hero-far.jpg" alt="" width="1280" height="720" decoding="async" loading="eager" fetchpriority="high">
+                </picture>
+                <picture>
+                    <source type="image/webp" srcset="images/hero-mid-400.webp 400w, images/hero-mid-640.webp 640w, images/hero-mid-1280.webp 1280w" sizes="100vw">
+                    <img class="pyw-hero__layer pyw-hero__layer--mid" src="images/hero-mid.jpg" alt="" width="1280" height="720" decoding="async" loading="eager">
+                </picture>
+                <picture>
+                    <source type="image/webp" srcset="images/hero-near-400.webp 400w, images/hero-near-640.webp 640w, images/hero-near-1280.webp 1280w" sizes="100vw">
+                    <img class="pyw-hero__layer pyw-hero__layer--near" src="images/hero-near.jpg" alt="" width="1280" height="720" decoding="async" loading="eager">
+                </picture>
+            </div>
+            <div class="pyw-hero__veil"></div>
+            <div class="pyw-hero__content">
+                <p class="pyw-hero__tag">张嘉佳 · 睡前故事 · 2013</p>
+                <h1 class="pyw-hero__title">从你的全世界路过</h1>
+                <p class="pyw-hero__sub">在风车与花海之间，把温柔留给每一次路过</p>
+                <p class="pyw-hero__lead">今天，你路过了谁？谁又丢失了你呢？</p>
+            </div>
+            <div class="pyw-hero__scroll">
+                <span>向下滑动</span>
+                <i class="pyw-chevron"></i>
+            </div>
+        </header>
+
+        <section id="about" class="section" data-section="1">
+            <div class="pyw-panel">
+                <h2 class="pyw-h2">遇见这本书</h2>
+                <figure class="pyw-figure">
+                    <picture>
+                        <source type="image/webp" srcset="images/stars-640.webp 640w, images/stars-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 720px">
+                        <img src="images/stars.jpg" alt="星空下的银河" width="1280" height="720" loading="lazy" decoding="async">
+                    </picture>
+                    <figcaption>入夜电台、列车与星空——故事里最常见的底色</figcaption>
+                </figure>
+                <p>《从你的全世界路过》是作家<strong>张嘉佳</strong>的短篇小说集，由三十余则「睡前故事」组成，写都市里的爱情、友情与成长。纸书销量破千万，后被改编为同名电影（邓超、杜鹃、杨洋、张天爱等主演），也让<strong>重庆</strong>的烟火与<strong>稻城亚丁</strong>的雪山草甸，成为一代人心中的爱情地标。</p>
+                <p>它并不许诺圆满结局，却愿意把遗憾写得温柔：适逢其会的开头，花开两朵的天各一方；有人如书签般路过你的生命，也有人，在终点等你。</p>
+                <!-- <p class="pyw-note">专题参考多家导读与影评，如 <a href="https://www.toutiao.com/article/7084036942261781031/" target="_blank" rel="noopener noreferrer">今日头条经典台词梳理</a>。配图来自 <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer">Pexels</a>，已下载至 <code>images/</code> 目录（风车花田、雪山草甸、星空、古城夜景等）。</p> -->
+            </div>
+        </section>
+
+        <section id="someone" class="section" data-section="2">
+            <div class="pyw-panel pyw-panel--quote">
+                <h2 class="pyw-h2">如你一般的人</h2>
+                <blockquote class="pyw-soul-quote">
+                    <p>我希望有个如你一般的人，如山间清爽的风，如古城温暖的光。</p>
+                    <p>从清晨到夜晚，由山野到书房，只要最后是你，就好。</p>
+                    <footer>—— 张嘉佳 · 贯彻未来，数遍生命的公路牌</footer>
+                </blockquote>
+                <div class="pyw-duo-grid">
+                    <article class="pyw-duo-card" data-tilt>
+                        <picture>
+                            <source type="image/webp" srcset="images/forest-640.webp 640w, images/forest-1280.webp 1280w" sizes="(max-width: 480px) 100vw, 400px">
+                            <img src="images/forest.jpg" alt="清晨山野小径" loading="lazy" decoding="async">
+                        </picture>
+                        <h3>山间清爽的风</h3>
+                        <p>温暖而不炙热，覆盖我所有肌肤；由起点到夜晚，由山野到书房。</p>
+                    </article>
+                    <article class="pyw-duo-card" data-tilt>
+                        <picture>
+                            <source type="image/webp" srcset="images/old-town-640.webp 640w, images/old-town-1280.webp 1280w" sizes="(max-width: 480px) 100vw, 400px">
+                            <img src="images/old-town.jpg" alt="古城街巷暖光" loading="lazy" decoding="async">
+                        </picture>
+                        <h3>古城温暖的光</h3>
+                        <p>如奔赴古城道路上阳光一般的人，一切问题的答案都很简单。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="scenes" class="section" data-section="3">
+            <div class="pyw-panel pyw-panel--wide">
+                <h2 class="pyw-h2">电影里的风景</h2>
+                <p class="pyw-lead">文艺爱情悲喜剧把青春与都市织进镜头；稻城亚丁的雪山经幡，与重庆的夜色江桥，构成「路过」最具体的背景板。</p>
+                <div class="pyw-scene-stack">
+                    <article class="pyw-scene-card pyw-scene-card--depth-1" data-tilt>
+                        <picture>
+                            <source type="image/webp" srcset="images/meadow-640.webp 640w, images/meadow-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 560px">
+                            <img src="images/meadow.jpg" alt="亚丁高原湖泊" loading="lazy" decoding="async">
+                        </picture>
+                        <div class="pyw-scene-card__body">
+                            <h3>稻城 · 秋天的童话</h3>
+                            <p>看蔚蓝的天空，白色的雪山，金黄的草地。如果没有住在你的心里，都是客死他乡；相爱，就是永远在一起。</p>
+                        </div>
+                    </article>
+                    <article class="pyw-scene-card pyw-scene-card--depth-2" data-tilt>
+                        <picture>
+                            <source type="image/webp" srcset="images/city-night-640.webp 640w, images/city-night-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 560px">
+                            <img src="images/city-night.jpg" alt="城市夜景灯火" loading="lazy" decoding="async">
+                        </picture>
+                        <div class="pyw-scene-card__body">
+                            <h3>重庆 · 烟火与电台</h3>
+                            <p>陈末与小容的直播间、猪头对着洪崖洞的告白、十八梯的壁画——城市越喧嚣，孤独越需要被温柔接听。</p>
+                        </div>
+                    </article>
+                    <article class="pyw-scene-card pyw-scene-card--depth-3" data-tilt>
+                        <picture>
+                            <source type="image/webp" srcset="images/stars-640.webp 640w, images/stars-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 560px">
+                            <img src="images/stars.jpg" alt="星空银河" loading="lazy" decoding="async">
+                        </picture>
+                        <div class="pyw-scene-card__body">
+                            <h3>星空 · 终点等你</h3>
+                            <p>「如果只是路过，我就在终点等你。」稻城重逢，开放式结局，却让人愿意再相信一次爱情。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="quotes" class="section" data-section="4">
+            <div class="pyw-panel pyw-panel--wide">
+                <h2 class="pyw-h2">名句掠影</h2>
+                <p class="pyw-lead">六则最短的情话，像书签一样夹在长页之间。更多原著与电影台词见下方两章。</p>
+                <div class="pyw-quote-grid">
+                    <blockquote class="pyw-quote-card" data-tilt><p>故事的开头总是这样，适逢其会，猝不及防。故事的结局总是这样，花开两朵，天各一方。</p></blockquote>
+                    <blockquote class="pyw-quote-card" data-tilt><p>我觉得这个世界美好无比。晴时满树花开，雨天一湖涟漪——全部是你不经意写的一字一句，留我年复一年朗读。</p></blockquote>
+                    <blockquote class="pyw-quote-card" data-tilt><p>在青春的列车上，如果你要提前下车，请别推醒装睡的我，这样我可以沉睡到终点，假装不知道你已经离开。</p></blockquote>
+                    <blockquote class="pyw-quote-card" data-tilt><p>一个人的记忆就是一座城市，时间腐蚀一切建筑。我们泪流满面，步步回头，可是只能往前走。</p></blockquote>
+                    <blockquote class="pyw-quote-card" data-tilt><p>世事如书，我偏爱你这一句。愿做个逗号，呆在你脚边。但你有自己的朗读者，而我只是个摆渡人。</p></blockquote>
+                    <blockquote class="pyw-quote-card" data-tilt><p>我从一些人的世界路过，一些人从我的世界路过。如同书签，夹在时间的罅隙里，偶尔回头看看就好。</p></blockquote>
+                </div>
+                <div class="pyw-carousel" id="quote-carousel">
+                    <p class="pyw-carousel__text" id="carousel-text"></p>
+                    <p class="pyw-carousel__from" id="carousel-from"></p>
+                    <div class="pyw-carousel__dots" id="carousel-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quotes-book" class="section" data-section="5">
+            <div class="pyw-panel pyw-panel--wide">
+                <h2 class="pyw-h2">原著 · 睡前故事</h2>
+                <p class="pyw-lead">张嘉佳在书中写下大量可朗读的句子；以下摘编自公开流传的经典语录与修订本导读。</p>
+                <ul class="pyw-line-list">
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>我希望有个如你一般的人。如这山间清晨一般明亮清爽的人，如奔赴古城道路上阳光一般的人，温暖而不炙热，覆盖我所有肌肤。由起点到夜晚，由山野到书房，一切问题的答案都很简单。只要最后是你，就好。</p>
+                        <footer>第一夜 · 我希望有个如你一般的人</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>所有人的坚强，都是柔软生的茧。</p>
+                        <footer>摘录 · 流传最广短句之一</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>我们要互相亏欠，要不然凭何怀缅。</p>
+                        <footer>摘录</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>满城的雨水，模糊的痕迹，忘不了的岸上足迹，忘不了的每一片叶子。只属于我的你，永远是你的，不会变。</p>
+                        <footer>摘录</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>我们在同一个时区，却有一辈子的时差。</p>
+                        <footer>摘录</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>你会遇到很多人，明白很多事，发现很多真相，也会随之成长。但只有你，始终是我的终点。</p>
+                        <footer>摘录 · 意译自「终点等你」主题句</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>我知道自己喜欢你，但我不知道将来在哪里。因为我知道，无论哪里，你都不会带我去。而记忆打亮你的微笑，要如此用力，才变得欢喜。</p>
+                        <footer>摘录</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>眼泪一滴一滴地从心里流出来，从记忆深处漫上来，浮到最快乐的空间，结果笑容也是咸的。</p>
+                        <footer>摘录</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>听到汽笛，就代表要分离。但我希望，分离之后，还有重逢。</p>
+                        <footer>化用 · 火车与离别意象</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--book">
+                        <p>属于你的，永远会是你的。不属于你的，再努力也抓不住。但路过人间，能温柔地爱过，就已经很好。</p>
+                        <footer>专题辑录 · 全书基调</footer>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="quotes-film" class="section" data-section="6">
+            <div class="pyw-panel pyw-panel--wide">
+                <h2 class="pyw-h2">电影 · 流动的诗歌</h2>
+                <p class="pyw-lead">2016 年同名电影用流畅叙事串起青春与都市；以下台词摘编自公开影评与 <a href="https://www.toutiao.com/article/7084036942261781031/" target="_blank" rel="noopener noreferrer">经典台词梳理</a>，按剧情脉络排列。</p>
+                <ul class="pyw-line-list">
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>我希望有个如你一般的人，如山间清爽的风，如古城温暖的光，只要最后是你就好。今天，你路过了谁？谁又丢失了你呢？从你的全世界路过。</p>
+                        <footer>陈末 · 电台开场白</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>有一个地方，叫做稻城。我要和我最心爱的人，一起去到那里，看蔚蓝的天空，看白色的雪山，看金黄的草地，看一场秋天的童话。如果没有住在你的心里，都是客死他乡。相爱这件事情，就是永远在一起。</p>
+                        <footer>陈末 · 电台告白小容</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>生活是漫长的，如果你在生活当中做了一个错误的决定，你就肯定彻底地陷入了煎熬。</p>
+                        <footer>陈末 · 热线</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>在最固定的清晨和黄昏，全校师生都能看到他们走过校园最美丽的道路——这是属于我们的青春，光芒万丈的青春。</p>
+                        <footer>旁白 · 猪头与燕子</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>都给我起来！我要让你们所有人都知道，燕子，我爱你！猪头的爱情就像坐标，只要他爱着燕子，那么我们，就是年轻的。</p>
+                        <footer>猪头 · 天台</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>我也想吃我妈包的饺子了。幺鸡虽小，但是没有幺鸡，也胡不了十三幺。</p>
+                        <footer>陈末与幺鸡 · 安慰女孩</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>当你全力以赴打算对一个人好的时候，你就变成了傻子、聋子，眼里除了他，什么人都没有。</p>
+                        <footer>幺鸡 · 送陈末就医</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>我会在导航仪里，一直陪着你。只要有太阳照常升起，导航仪就永远有电。我，永远在你身边。</p>
+                        <footer>茅十八 · 荔枝</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>我对她好，其实是我不好。她对我不好，其实是对我好。</p>
+                        <footer>猪头 · 燕子分手</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>燕子，没有你，我怎么活啊？</p>
+                        <footer>猪头</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>因为心里有爱，节目才会有爱。当我们自己感到孤独的时候，我们无法温暖别人。</p>
+                        <footer>小容 · 代班</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>对我来说，相爱就可以；对我来说，适合才重要。我把青春献给了爱情，但我们有第二次青春。</p>
+                        <footer>小容 · 天台拒绝陈末</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>我多希望，我的生活可以和墙上的画一样，越来越美好，幸福得不得了。</p>
+                        <footer>幺鸡 · 涂鸦伞</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>人一辈子会听到很多心里话。沙城就是一个人的记忆，你无法触碰，一旦双手陷入，整座城市就会轰隆隆地崩塌。所以我们泪流满面，步步回头，可是只能向前走。</p>
+                        <footer>陈末 · 想念幺鸡</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>如果只是路过，我就在终点等你。</p>
+                        <footer>陈末 · 离开重庆</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>因为是最蓝的天，所以你是天使。荔枝，我爱你。我永远爱你。</p>
+                        <footer>茅十八 · 导航预设（稻城）</footer>
+                    </li>
+                    <li class="pyw-line-item pyw-line-item--film">
+                        <p>我希望有人如你一般的人……一个人，终将拥有另一个人。对你点点头，贯彻未来，数遍生命的公路牌。</p>
+                        <footer>陈末 · 稻城重逢幺鸡</footer>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="pass" class="section" data-section="7">
+            <div class="pyw-panel">
+                <h2 class="pyw-h2">路过与重逢</h2>
+                <figure class="pyw-figure pyw-figure--windmill">
+                    <picture>
+                        <source type="image/webp" srcset="images/lavender-640.webp 640w, images/lavender-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 720px">
+                        <img src="images/lavender.jpg" alt="薰衣草花田" width="1280" height="1707" loading="lazy" decoding="async">
+                    </picture>
+                    <figcaption>花海与远方——愿你的生活如墙上的画，越来越美好</figcaption>
+                </figure>
+                <ul class="pyw-char-list">
+                    <li><strong>陈末</strong> · 电台主播，在颓废与告白之间学会爱</li>
+                    <li><strong>幺鸡</strong> · 最小的麻将牌，却能让十三幺完整</li>
+                    <li><strong>猪头</strong> · 坐标般的痴情，燕子是他的青春</li>
+                    <li><strong>茅十八</strong> · 导航仪里的永远，荔枝，我爱你</li>
+                    <li><strong>小容</strong> · 适合比相爱更重要，也教会陈末成长</li>
+                    <li><strong>荔枝</strong> · 走路看天空，此后有导航的声音陪着她</li>
+                </ul>
+                <p>有人适合相爱，有人适合生活；有人被现实打败，有人在偏僻乡野重新开播。张嘉佳写的从来不是童话，而是<strong>温柔的真实</strong>：让你哭完，仍想拥抱明天。</p>
+                <!-- <p class="pyw-note">上方轮播与「电影」一章可对照阅读；原著短篇按「七夜」结构展开，欢迎翻开纸书，随便打开一篇即可。</p> -->
+                <a href="https://www.anlian.cyou/topics/" class="pyw-btn">返回专题书架</a>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
